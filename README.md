@@ -1,2 +1,2 @@
 # AI-powered customer support backend
-## built with Spring Boot, PostgreSQL and OpenAI.
+## Built with Spring Boot, PostgreSQL, Docker and OpenAI.
