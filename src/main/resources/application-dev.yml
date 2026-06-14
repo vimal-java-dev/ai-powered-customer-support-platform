@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ai-powered-customer-support-platform
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/aidb
+    username: contactuser
+    password: contactpass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+    open-in-view: false
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: INFO
