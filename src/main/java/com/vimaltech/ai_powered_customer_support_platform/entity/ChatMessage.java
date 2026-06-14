@@ -1,5 +1,6 @@
 package com.vimaltech.ai_powered_customer_support_platform.entity;
 
+import com.vimaltech.ai_powered_customer_support_platform.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,11 +19,13 @@ public class ChatMessage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String userMessage;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private Role role;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String aiResponse;
+    private String content;
 
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 }
