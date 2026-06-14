@@ -9,12 +9,11 @@ import java.util.TimeZone;
 @SpringBootApplication
 public class AiPoweredCustomerSupportPlatformApplication {
 
-	public static void main(String[] args) {
-
+	static {
 		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Kolkata"));
+	}
 
-		System.out.println(TimeZone.getDefault().getID());
-
+	public static void main(String[] args) {
 		SpringApplication.run(AiPoweredCustomerSupportPlatformApplication.class, args);
 	}
 
