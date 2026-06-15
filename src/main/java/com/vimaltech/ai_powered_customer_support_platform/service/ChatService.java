@@ -5,6 +5,7 @@ import com.vimaltech.ai_powered_customer_support_platform.dto.ChatResponse;
 import com.vimaltech.ai_powered_customer_support_platform.entity.ChatMessage;
 import com.vimaltech.ai_powered_customer_support_platform.enums.Role;
 import com.vimaltech.ai_powered_customer_support_platform.repository.ChatMessageRepository;
+import com.vimaltech.ai_powered_customer_support_platform.service.ai.AiService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +17,11 @@ import java.util.List;
 public class ChatService {
 
     private final ChatMessageRepository chatMessageRepository;
+    private final AiService aiService;
 
     public ChatResponse chat(String userMessage) {
 
-        String aiResponse = "AI integration coming soon: " + userMessage;
+        String aiResponse = aiService.generateResponse(userMessage);
 
         ChatMessage userChat = ChatMessage.builder()
                 .role(Role.USER)
